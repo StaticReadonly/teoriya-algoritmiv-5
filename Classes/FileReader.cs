@@ -6,7 +6,7 @@ namespace Classes
     {
         private static readonly HashSet<string> ExcludeList = new HashSet<string>() 
         { 
-            "int", "double", "float", "short", "unsigned", "string", "long", "include", "return", "void"
+            "include", "return", "void", "class", "public", "private", "protected", "new"
         };
 
         public async Task<BinaryTree> ReadFile(string file)
@@ -16,7 +16,7 @@ namespace Classes
             using FileStream stream = File.OpenRead(file);
             using StreamReader reader = new StreamReader(stream);
 
-            Regex regex = new Regex("(<\\s*[a-zA-Z_0-9]+\\s*>)|(\\\"\\s*[a-zA-Z_0-9]+\\s*\\\")|([a-zA-Z_0-9]+::)|([a-zA-Z_0-9]+)");
+            Regex regex = new Regex("(\\\"\\s*[a-zA-Z_0-9]+\\s*\\\")|([a-zA-Z_0-9]+)");
 
             while (!reader.EndOfStream)
             {

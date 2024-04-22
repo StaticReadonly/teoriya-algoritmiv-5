@@ -8,7 +8,7 @@ namespace Lab5
         {
             FileReader reader = new FileReader();
 
-            var result = await reader.ReadFile("D:\\KPI Labs\\Теорія алгоритмів\\lab5\\Lab5\\Files\\test1.cpp");
+            var result = await reader.ReadFile("D:\\KPI Labs\\Теорія алгоритмів\\lab5\\Lab5\\Files\\test3.cpp");
 
             foreach(var r in result.TreeTraversal())
             {
